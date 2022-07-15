@@ -1,0 +1,359 @@
+#shell script to print numbers 1 to 100
+
+i=1
+while [ $i -le 100 ]
+do
+    echo $i
+    i=$(($i+1))
+done
+
+
+echo "Enter a number"
+read num
+
+sum=0
+
+while [ $num -gt 0 ]
+do
+    mod=$((num % 10))    #It will split each digits
+    sum=$((sum + mod))   #Add each digit to sum
+    num=$((num / 10))    #divide num by 10.
+done
+
+echo $sum
+
+
+#shell script for largest of n numbers
+  
+echo "Enter Size(N)"
+read N
+
+i=1
+max=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num
+  if [ $i -eq 1 ]  #set first number as max
+  then
+      max=$num
+  else             #from number 2 update max if the num > max.
+      if [ $num -gt $max ]
+      then
+        max=$num
+      fi
+  fi
+  i=$((i + 1))  #increment i by 1
+done
+
+echo $max
+
+
+
+
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num               #get number
+  sum=$((sum + num))     #sum+=num
+  i=$((i + 1))
+done
+
+avg=$(echo $sum / $N | bc -l)
+
+echo $avg
+
+
+
+#shell script for factorial of a number
+#factorial using while loop
+
+echo "Enter a number"
+read num
+
+fact=1
+
+while [ $num -gt 1 ]
+do
+  fact=$((fact * num))  #fact = fact * num
+  num=$((num - 1))      #num = num - 1
+done
+
+echo $fact
+
+#shell script for factorial of a number
+#factorial using for loop
+
+echo "Enter a number"
+read num
+
+fact=1
+
+for((i=2;i<=num;i++))
+{
+  fact=$((fact * i))  #fact = fact * i
+}
+
+echo $fact
+
+#shell script to find sum of n numbers
+  
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num           #get number
+  sum=$((sum + num)) #sum+=num
+  i=$((i + 1))
+done
+
+echo $sum
+
+
+
+
+
+GIT GRAPH
+goto github website
+create a new repository
+copy the link
+goto gitbash
+git clone <link>
+cd <foldername>
+git branch branch1
+git checkout branch1
+echo “hello” >> hello.txt
+git add .
+git commit -m “commit 1”
+git checkout main
+git add .
+git commit -m “commit 2”
+git log
+git log --graph
+
+
+GIT PATCH
+mkdir patch
+cd patch
+git init
+goto github
+create a new github repository
+copy the link of the repository
+goto gitbash
+git clone (link)
+echo “test” >> hello.txt
+git add .
+gt commit -m “commit”
+git format -patch -1
+git push
+send the url to another user
+another computer:
+git clone <link>
+echo “test” >> hello.txt
+git add .
+git commit -m “commit”
+git format -patch -1
+git push
+git diff
+git apply 0001-add-changes
+
+
+GIT BRANCH MERGE
+mkdir lab
+cd lab
+git init
+echo "hello" >> hello.txt
+git add .
+git commit -m "commit 1"
+git config –user.email sreeharshanas.21aim@kongu.edu
+git config –user.name Sree Harshan
+git push
+git branch branch1
+git checkout branch1
+git branch
+echo "hello2" >> hello.txt
+git add .
+git commit -m "branch commit"
+git push
+git checkout main
+echo "hello3" >> hello.txt
+git add .
+git commit -m "commit 3"
+git merge branch 1
+
+GIT SUBMODULE
+mkdir surface
+cd surface
+git init
+touch file.txt
+git add .
+git commit -m "first commit"
+git log --oneline
+mkdir watch
+cd watch
+git init
+touch note.txt
+git add .
+git commit -m "commit"
+cd ..
+git submodule add ./watch
+git status
+git add .
+git commit -m "add submodule"
+git log --oneline
+git update
+
+
+
+
+Addition program
+echo “enter num1 and num2”
+read n1
+read n2
+ans=$(($n1/$n2))
+echo “ans is $ans”
+Print 1 to n numbers
+echo “enter number”
+read n
+for((i=0;i<n;i++))
+do
+echo “$i”
+done
+Number pattern
+rows=5
+number=1
+for((i=1;i<=rows-i;i++))
+do
+for((j=1;j<=rows-i;j++))
+do
+echo -n “ “
+done
+number=$i
+k=1
+for((j=1;j<2*i-1;j++))
+do
+if [ $j -lt $i ]
+then
+echo -n “$number”
+number=$((number+1))
+elif [ $j -eq $i ]
+then
+echo -n “$number”
+number=$((number-1))
+else
+echo -n “$number”
+number=$((number-1))
+fi
+done
+echo
+done
+
+Compare two strings
+read -p “Enter first string:” var1
+read -p “Enter second string:” var2
+if [[ “$var1” == “$var2” ]]; then
+echo “strings are equal”
+else
+echo “string are not equal”
+fi
+Copy a string
+read s
+s2=”$s”
+echo $s2
+Length of a string
+s=”string”
+n=${s}
+echo “Length is $n”
+
+
+GIT MERGE CONFLICT
+Create a github repository in website
+Click new file in website
+Type something in file
+Save the file
+Copy the link of the repository
+Open gitbash
+Git clone (copied link)
+cd (folder name)
+echo “hello” >> (filename)
+git add .
+git commit -m “commit 2”
+git push
+git pull
+vi (filename)
+:wq
+git add .
+git commit -m “commit after change”
+git push
+
+CREATE REMOTE REPO
+mkdir proj
+cd proj
+git init
+goto github website
+create a new repository
+copy link
+goto gitbash
+mkdir remote
+cd remote
+git clone <link>
+
+
+
+
+pwd
+print working directory
+Output
+/root
+ls
+List files and folder
+Output
+hello.c hello.js readme.txt
+cd
+Change directory
+Output
+~#cd folder
+~/folder#
+cp
+Copy a file
+Output
+~#cp hello.c hello2.c
+mkdir
+Create a directory
+Output
+~#mkdir folder
+rmdir
+Delete a directory if it’s empty
+Output
+~#rmdir folder
+rm
+Remove a file
+Output
+~#rm hello.c
+man
+Gives the manual of the command
+Output
+~#man echo
+
+touch
+Creates a file
+Output
+~#touch hello.txt
+cat
+GIves contents of a file
+Output
+~#cat hello.py
+print(“hello”)
+      
